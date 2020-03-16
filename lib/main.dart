@@ -11,11 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Weewx weather app',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: Home());
+        title: 'Weewx weather app', theme: ThemeData(), home: Home());
   }
 }
 
@@ -24,7 +20,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1f2942),
+      backgroundColor: const Color(0xFF131825),
       body: FutureBuilder<WeatherData>(
           future: getWeatherData(),
           builder: (context, snapshot) {
@@ -40,12 +36,41 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       /// TITOLO
-                      Text(
-                        'In questo momento ci sono ${snapshot.data.current.outTemp} °C a ${snapshot.data.location}',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: const Color(0xFFE5E5E5),
-                          fontSize: 23.0,
+                      RichText(
+                        text: TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'In questo momento ci sono ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xFFE5E5E5),
+                                fontSize: 23.0,
+                              ),
+                            ),
+                            TextSpan(
+                                text: '${snapshot.data.current.outTemp} °C',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: const Color(0xFF00c2c2),
+                                  fontSize: 23.0,
+                                )),
+                            TextSpan(
+                              text: ' a ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xFFE5E5E5),
+                                fontSize: 23.0,
+                              ),
+                            ),
+                            TextSpan(
+                              text: '${snapshot.data.location}',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: const Color(0xFF00c2c2),
+                                fontSize: 23.0,
+                              ),
+                            )
+                          ],
                         ),
                       ),
 
@@ -54,7 +79,7 @@ class Home extends StatelessWidget {
                         margin: const EdgeInsets.only(top: 20, bottom: 10),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16.0),
-                          child: Image.network(webcam_url),
+                          child: Image.network(webcamUrl),
                         ),
                       ),
 
@@ -65,7 +90,7 @@ class Home extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16.0),
                           child: Container(
-                            color: const Color(0xFF3A445D),
+                            color: const Color(0xFF2D3446),
                             child: Padding(
                                 padding: const EdgeInsets.all(15.0),
                                 child: Column(
@@ -86,7 +111,7 @@ class Home extends StatelessWidget {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(
-                                          top: 8.0, bottom: 8.0),
+                                          top: 15.0, bottom: 8.0),
                                       child: Row(
                                         children: <Widget>[
                                           Expanded(
@@ -157,7 +182,7 @@ class Home extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(16.0),
                             child: Container(
-                              color: const Color(0xFF3A445D),
+                              color: const Color(0xFF2D3446),
                               child: Padding(
                                 padding: const EdgeInsets.all(15.0),
                                 child: Column(
@@ -178,7 +203,7 @@ class Home extends StatelessWidget {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(
-                                          top: 8.0, bottom: 8.0),
+                                          top: 15.0, bottom: 8.0),
                                       child: Row(
                                         children: <Widget>[
                                           Expanded(
@@ -324,7 +349,7 @@ class Home extends StatelessWidget {
                         margin: const EdgeInsets.only(top: 10, bottom: 10),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16.0),
-                          child: Image.network(radar_url),
+                          child: Image.network(radarUrl),
                         ),
                       ),
                     ],
