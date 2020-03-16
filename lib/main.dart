@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'fetchData.dart';
-import 'json.dart';
+import 'package:weewx_mobile_app/fetchData.dart';
+import 'package:weewx_mobile_app/json.dart';
+import 'package:weewx_mobile_app/config.dart';
 
 void main() {
   runApp(new MyApp());
@@ -11,19 +11,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Weewx weather app',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Home(
-          title: 'Meteo bello app',
-        ));
+        home: Home());
   }
 }
 
 class Home extends StatelessWidget {
-  Home({Key key, this.title}) : super(key: key);
-  final String title;
+  Home({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +45,7 @@ class Home extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: const Color(0xFFE5E5E5),
-                          fontSize: 20.0,
+                          fontSize: 23.0,
                         ),
                       ),
 
@@ -57,8 +54,7 @@ class Home extends StatelessWidget {
                         margin: const EdgeInsets.only(top: 20, bottom: 10),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16.0),
-                          child: Image.network(
-                              'https://webcamflutterapi--nikofresh.repl.co/webcam'),
+                          child: Image.network(webcam_url),
                         ),
                       ),
 
@@ -314,36 +310,29 @@ class Home extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ))
+                          )),
+                      Text(
+                        'Ultimo aggiornamento: ${snapshot.data.time}',
+                        style: TextStyle(
+                          color: const Color(0xFFE5E5E5),
+                          fontSize: 13.0,
+                        ),
+                      ),
+
+                      /// RADAR
+                      Container(
+                        margin: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(16.0),
+                          child: Image.network(radar_url),
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ));
             } else
               return Center(child: CircularProgressIndicator());
-          }),
-
-      /// BOTTOM NAVBAR
-      bottomNavigationBar: FutureBuilder<WeatherData>(
-          future: getWeatherData(),
-          builder: (context, snapshot) {
-            return Container(
-                child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    'Ultimo aggiornamento: ${snapshot.data.time}',
-                    style: TextStyle(
-                      color: const Color(0xFFE5E5E5),
-                      fontSize: 13.0,
-                    ),
-                  ),
-                  Icon(MaterialCommunityIcons.menu_left_outline)
-                ],
-              ),
-            ));
           }),
     );
   }
