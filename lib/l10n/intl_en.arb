@@ -1,0 +1,17 @@
+{
+    "currentTitle": "Current weather",
+    "currentTemp": "Temperature: ",
+    "currentHumidity": "Humidity: ",
+    "currentWind": "Wind: ",
+    "currentRainRate": "Rain rate: ",
+    "currentBarometer": "Barometer: ",
+    "currentWindChill": "Wind chill: ",
+
+    "sinceMNTitle": "Since midnight",
+    "sinceMNTempMax": "High temperature: ",
+    "sinceMNTempMin": "Low temperature: ",
+    "sinceMNHumMax": "High humidity: ",
+    "sinceMNHumMin": "Low humidity: ",
+    "sinceMNWindMax": "High wind: ",
+    "sinceMNTotalRain": "Total rain: "
+}

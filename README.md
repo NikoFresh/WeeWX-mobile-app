@@ -1,16 +1,66 @@
-# weewx_mobile_app
+# WeeWX weather app
 
-A new Flutter project.
+WeeWX Weather App is a mobile application for [WeeWX](http://weewx.com) built with [Flutter](https://flutter.dev/)
 
-## Getting Started
+## Installation
+### WeeWX installation
+Copy the file json/app.json.tmpl to your WeeWX server in the skin you're currently using, then edit the skin.conf file:
 
-This project is a starting point for a Flutter application.
+```conf
+[CheetahGenerator]
+   ...
+   [[ToDate]]
+   ...
+      [[[mobileapp]]]
+            template = app.json.tmpl
+```
+### App installation
+#### Note: these instruction are for Android. To buld the app for iOS, follow [this](https://flutter.dev/docs/deployment/ios). 
+##### Install Flutter in your computer if you don't have it already: [Install - Flutter](https://flutter.dev/docs/get-started/install);
 
-A few resources to get you started if this is your first Flutter project:
+##### Clone the repository.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+##### Add your links in the app:
+In the /lib/config.dart:
+```dart
+final weatherDataUrl = ; // Required
+final radarUrl = ; // Optional
+final webcamUrl = ; // Optional
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+##### Optional: Modify the name of the app:
+In pubspec.yaml edit the app name and the icon:
+```yaml
+name: weewx_mobile_app
+
+flutter_icons:
+  image_path: 'assets/icon.png'
+```
+In /android/app/src/main/AndroidManifest.xml update the package name and the app name:
+```xml
+<application
+        ...
+        android:label="MeteoCentroCadore"
+        ...>
+```
+In /android/app/build.gradle edit the application id:
+```grandle
+defaultConfig {
+        applicationId "com.nikofresh.weewx"
+        ...
+    }
+```
+
+##### Run the build:
+```bash
+flutter build apk
+```
+You'll have the apk file in weewx-mobile-app/build/app/outputs/apk/release/app-relase.apk
+
+## Internationalization
+Install [this](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl) plugin for VS Code. Run the command "Flutter Intl: Add locale" and edit the file /l10n/intl_locale.arb.
+##### Note that the app is already translated in English and Italian
+
+## License
+[MIT](https://github.com/NikoFresh/WeeWX-mobile-app/blob/master/license)

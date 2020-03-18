@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weewx_mobile_app/fetchData.dart';
 import 'package:weewx_mobile_app/json.dart';
 import 'package:weewx_mobile_app/config.dart';
+import 'generated/l10n.dart';
 
 void main() {
   runApp(new MyApp());
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
+        localizationsDelegates: [S.delegate],
+        supportedLocales: S.delegate.supportedLocales,
         title: 'Weewx weather app',
         theme: ThemeData(),
         home: Home());
@@ -36,7 +38,7 @@ class Home extends StatelessWidget {
                   child: ListView(
                 padding: const EdgeInsets.all(15.0),
                 children: [
-                  /// TITOLO
+                  /// Title
                   RichText(
                     text: TextSpan(
                       children: <TextSpan>[
@@ -61,15 +63,9 @@ class Home extends StatelessWidget {
                   ),
 
                   /// WEBCAM
-                  Container(
-                    margin: const EdgeInsets.only(top: 20, bottom: 10),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image.network(webcamUrl),
-                    ),
-                  ),
+                  imageWidget(webcamUrl),
 
-                  /// CONDIZIONI ATTUALI
+                  /// Current weather
                   Container(
                     color: Colors.transparent,
                     margin: const EdgeInsets.only(top: 10, bottom: 10),
@@ -85,7 +81,7 @@ class Home extends StatelessWidget {
                                   children: <Widget>[
                                     Expanded(
                                       child: Text(
-                                        'Condizioni attuali:',
+                                        S.of(context).currentTitle,
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
                                           color: const Color(0xFFE5E5E5),
@@ -102,7 +98,8 @@ class Home extends StatelessWidget {
                                     children: <Widget>[
                                       Expanded(
                                         child: Text(
-                                          'Temperatura: ${snapshot.data.current.outTemp} °C',
+                                          S.of(context).currentTemp +
+                                              '${snapshot.data.current.outTemp} °C',
                                           style: TextStyle(
                                             color: const Color(0xFFE5E5E5),
                                             fontSize: 16.0,
@@ -116,7 +113,8 @@ class Home extends StatelessWidget {
                                   children: <Widget>[
                                     Expanded(
                                       child: Text(
-                                        'Umidità: ${snapshot.data.current.humidity}',
+                                        S.of(context).currentHumidity +
+                                            '${snapshot.data.current.humidity}',
                                         style: TextStyle(
                                           color: const Color(0xFFE5E5E5),
                                           fontSize: 16.0,
@@ -126,12 +124,14 @@ class Home extends StatelessWidget {
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, bottom: 8.0),
                                   child: Row(
                                     children: <Widget>[
                                       Expanded(
                                         child: Text(
-                                          'Vento: ${snapshot.data.current.windSpeed}',
+                                          S.of(context).currentWind +
+                                              '${snapshot.data.current.windSpeed}',
                                           style: TextStyle(
                                             color: const Color(0xFFE5E5E5),
                                             fontSize: 16.0,
@@ -145,7 +145,8 @@ class Home extends StatelessWidget {
                                   children: <Widget>[
                                     Expanded(
                                       child: Text(
-                                        'Intensità pioggia: ${snapshot.data.current.rainRate}',
+                                        S.of(context).currentRainRate +
+                                            '${snapshot.data.current.rainRate}',
                                         style: TextStyle(
                                           color: const Color(0xFFE5E5E5),
                                           fontSize: 16.0,
@@ -155,12 +156,14 @@ class Home extends StatelessWidget {
                                   ],
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, bottom: 8.0),
                                   child: Row(
                                     children: <Widget>[
                                       Expanded(
                                         child: Text(
-                                          'Pressione: ${snapshot.data.current.barometer}',
+                                          S.of(context).currentBarometer +
+                                              '${snapshot.data.current.barometer}',
                                           style: TextStyle(
                                             color: const Color(0xFFE5E5E5),
                                             fontSize: 16.0,
@@ -174,7 +177,8 @@ class Home extends StatelessWidget {
                                   children: <Widget>[
                                     Expanded(
                                       child: Text(
-                                        'Wind chill: ${snapshot.data.current.windchill} °C',
+                                        S.of(context).currentWindChill +
+                                            '${snapshot.data.current.windchill} °C',
                                         style: TextStyle(
                                           color: const Color(0xFFE5E5E5),
                                           fontSize: 16.0,
@@ -189,7 +193,7 @@ class Home extends StatelessWidget {
                     ),
                   ),
 
-                  /// DALLA MEZZANOTTE
+                  /// Since midnight
                   Container(
                       color: Colors.transparent,
                       margin: const EdgeInsets.only(top: 10, bottom: 10),
@@ -205,7 +209,7 @@ class Home extends StatelessWidget {
                                   width: double.infinity,
                                   child: Container(
                                     child: Text(
-                                      "Dalla mezzanotte:",
+                                      S.of(context).sinceMNTitle,
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
@@ -222,7 +226,7 @@ class Home extends StatelessWidget {
                                     children: <Widget>[
                                       Expanded(
                                         child: Text(
-                                          'Temperatura max:',
+                                          S.of(context).sinceMNTempMax,
                                           style: TextStyle(
                                             color: const Color(0xFFE5E5E5),
                                             fontSize: 16.0,
@@ -262,7 +266,7 @@ class Home extends StatelessWidget {
                                   children: <Widget>[
                                     Expanded(
                                       child: Text(
-                                        'Temperatura min:',
+                                        S.of(context).sinceMNTempMin,
                                         style: TextStyle(
                                           color: const Color(0xFFE5E5E5),
                                           fontSize: 16.0,
@@ -302,7 +306,7 @@ class Home extends StatelessWidget {
                                     children: <Widget>[
                                       Expanded(
                                         child: Text(
-                                          'Umidità max:',
+                                          S.of(context).sinceMNHumMax,
                                           style: TextStyle(
                                             color: const Color(0xFFE5E5E5),
                                             fontSize: 16.0,
@@ -342,7 +346,7 @@ class Home extends StatelessWidget {
                                   children: <Widget>[
                                     Expanded(
                                       child: Text(
-                                        'Umidità min:',
+                                        S.of(context).sinceMNHumMin,
                                         style: TextStyle(
                                           color: const Color(0xFFE5E5E5),
                                           fontSize: 16.0,
@@ -382,7 +386,7 @@ class Home extends StatelessWidget {
                                     children: <Widget>[
                                       Expanded(
                                         child: Text(
-                                          'Vento massimo:',
+                                          S.of(context).sinceMNWindMax,
                                           style: TextStyle(
                                             color: const Color(0xFFE5E5E5),
                                             fontSize: 16.0,
@@ -422,7 +426,7 @@ class Home extends StatelessWidget {
                                   children: <Widget>[
                                     Expanded(
                                       child: Text(
-                                        'Pioggia totale:',
+                                        S.of(context).sinceMNTotalRain,
                                         style: TextStyle(
                                           color: const Color(0xFFE5E5E5),
                                           fontSize: 16.0,
@@ -446,20 +450,27 @@ class Home extends StatelessWidget {
                         ),
                       )),
 
-
                   /// RADAR
-                  Container(
-                    margin: const EdgeInsets.only(top: 10, bottom: 10),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(16.0),
-                      child: Image.network(radarUrl),
-                    ),
-                  ),
+                  imageWidget(radarUrl),
                 ],
               ));
             } else
               return Center(child: CircularProgressIndicator());
           }),
     );
+  }
+}
+
+Widget imageWidget(url) {
+  if (url != null) {
+    return Container(
+      margin: const EdgeInsets.only(top: 20, bottom: 10),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16.0),
+        child: Image.network(url),
+      ),
+    );
+  } else {
+    return null;
   }
 }

@@ -1,0 +1,17 @@
+{
+    "currentTitle": "Condizioni attuali",
+    "currentTemp": "Temperatura: ",
+    "currentHumidity": "Umidità: ",
+    "currentWind": "Vento: ",
+    "currentRainRate": "Intensità pioggia: ",
+    "currentBarometer": "Pressione: ",
+    "currentWindChill": "Wind chill: ",
+
+    "sinceMNTitle": "Da mezzanotte",
+    "sinceMNTempMax": "Temperatura massima: ",
+    "sinceMNTempMin": "Temperatura minima: ",
+    "sinceMNHumMax": "Umidità massima: ",
+    "sinceMNHumMin": "Umidità minima: ",
+    "sinceMNWindMax": "Vento massimo: ",
+    "sinceMNTotalRain": "Pioggia totale: "
+}
