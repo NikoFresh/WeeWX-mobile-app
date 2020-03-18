@@ -135,71 +135,43 @@ class Sun {
 class Current {
     String outTemp;
     String windchill;
-    String heatIndex;
     String dewpoint;
     String humidity;
-    String insideHumidity;
     String barometer;
-    String barometerTrendDelta;
-    String barometerTrendData;
     String windSpeed;
-    String windDir;
-    String windDirText;
     String windGust;
-    String windGustDir;
     String rainRate;
 
     Current({
         this.outTemp,
         this.windchill,
-        this.heatIndex,
         this.dewpoint,
         this.humidity,
-        this.insideHumidity,
         this.barometer,
-        this.barometerTrendDelta,
-        this.barometerTrendData,
         this.windSpeed,
-        this.windDir,
-        this.windDirText,
         this.windGust,
-        this.windGustDir,
         this.rainRate,
     });
 
     factory Current.fromJson(Map<String, dynamic> json) => Current(
         outTemp: json["outTemp"],
         windchill: json["windchill"],
-        heatIndex: json["heatIndex"],
         dewpoint: json["dewpoint"],
         humidity: json["humidity"],
-        insideHumidity: json["insideHumidity"],
         barometer: json["barometer"],
-        barometerTrendDelta: json["barometerTrendDelta"],
-        barometerTrendData: json["barometerTrendData"],
         windSpeed: json["windSpeed"],
-        windDir: json["windDir"],
-        windDirText: json["windDirText"],
         windGust: json["windGust"],
-        windGustDir: json["windGustDir"],
         rainRate: json["rainRate"],
     );
 
     Map<String, dynamic> toJson() => {
         "outTemp": outTemp,
         "windchill": windchill,
-        "heatIndex": heatIndex,
         "dewpoint": dewpoint,
         "humidity": humidity,
-        "insideHumidity": insideHumidity,
         "barometer": barometer,
-        "barometerTrendDelta": barometerTrendDelta,
-        "barometerTrendData": barometerTrendData,
         "windSpeed": windSpeed,
-        "windDir": windDir,
-        "windDirText": windDirText,
         "windGust": windGust,
-        "windGustDir": windGustDir,
         "rainRate": rainRate,
     };
 }
@@ -209,8 +181,6 @@ class SinceMidnight {
     String tempMaxTime;
     String tempMinValue;
     String tempMinTime;
-    String heatIndexMaxValue;
-    String heatIndexMaxTime;
     String windchillMinValue;
     String windchillMinTime;
     String humidityMaxValue;
@@ -229,20 +199,14 @@ class SinceMidnight {
     String rainRateMaxValue;
     String rainRateMaxTime;
     String windMaxValue;
-    String windMaxGustDir;
     String windMaxTime;
     String windAvg;
-    String windRms;
-    String windVecAvg;
-    String windVecDir;
 
     SinceMidnight({
         this.tempMaxValue,
         this.tempMaxTime,
         this.tempMinValue,
         this.tempMinTime,
-        this.heatIndexMaxValue,
-        this.heatIndexMaxTime,
         this.windchillMinValue,
         this.windchillMinTime,
         this.humidityMaxValue,
@@ -261,12 +225,8 @@ class SinceMidnight {
         this.rainRateMaxValue,
         this.rainRateMaxTime,
         this.windMaxValue,
-        this.windMaxGustDir,
         this.windMaxTime,
         this.windAvg,
-        this.windRms,
-        this.windVecAvg,
-        this.windVecDir,
     });
 
     factory SinceMidnight.fromJson(Map<String, dynamic> json) => SinceMidnight(
@@ -274,8 +234,6 @@ class SinceMidnight {
         tempMaxTime: json["tempMaxTime"],
         tempMinValue: json["tempMinValue"],
         tempMinTime: json["tempMinTime"],
-        heatIndexMaxValue: json["heatIndexMaxValue"],
-        heatIndexMaxTime: json["heatIndexMaxTime"],
         windchillMinValue: json["windchillMinValue"],
         windchillMinTime: json["windchillMinTime"],
         humidityMaxValue: json["humidityMaxValue"],
@@ -294,12 +252,8 @@ class SinceMidnight {
         rainRateMaxValue: json["rainRateMaxValue"],
         rainRateMaxTime: json["rainRateMaxTime"],
         windMaxValue: json["windMaxValue"],
-        windMaxGustDir: json["windMaxGustDir"],
         windMaxTime: json["windMaxTime"],
         windAvg: json["windAvg"],
-        windRms: json["windRms"],
-        windVecAvg: json["windVecAvg"],
-        windVecDir: json["windVecDir"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -307,8 +261,6 @@ class SinceMidnight {
         "tempMaxTime": tempMaxTime,
         "tempMinValue": tempMinValue,
         "tempMinTime": tempMinTime,
-        "heatIndexMaxValue": heatIndexMaxValue,
-        "heatIndexMaxTime": heatIndexMaxTime,
         "windchillMinValue": windchillMinValue,
         "windchillMinTime": windchillMinTime,
         "humidityMaxValue": humidityMaxValue,
@@ -327,11 +279,7 @@ class SinceMidnight {
         "rainRateMaxValue": rainRateMaxValue,
         "rainRateMaxTime": rainRateMaxTime,
         "windMaxValue": windMaxValue,
-        "windMaxGustDir": windMaxGustDir,
         "windMaxTime": windMaxTime,
         "windAvg": windAvg,
-        "windRms": windRms,
-        "windVecAvg": windVecAvg,
-        "windVecDir": windVecDir,
     };
 }
