@@ -1,0 +1,58 @@
+{
+    "title":"Current Values",
+    "location":"$station.location",
+    "time":"$current.dateTime",
+    "lat":"$station.latitude[0]° $station.latitude[1]° $station.latitude[2]°",
+    "lon":"$station.longitude[0]° $station.longitude[1]° $station.longitude[2]°",
+    "alt":"$station.altitude",
+    "hardware":"$station.hardware",
+    "uptime":"$station.uptime",
+    "serverUptime":"$station.os_uptime",
+    "weewxVersion":"$station.version",
+    "current": {
+        "outTemp":"$current.outTemp.formatted",
+        "windchill":"$current.windchill.formatted",
+        "dewpoint":"$current.dewpoint",
+        "humidity":"$current.outHumidity",
+        "barometer":"$current.barometer",
+        "windSpeed":"$current.windSpeed",
+        "windGust":"$current.windGust",
+        "rainRate":"$current.rainRate"
+    },
+    "sinceMidnight": {
+        "tempMaxValue":"$day.outTemp.max.formatted",
+        "tempMaxTime":"$day.outTemp.maxtime",
+        "tempMinValue":"$day.outTemp.min.formatted",
+        "tempMinTime":"$day.outTemp.mintime",
+        "windchillMinValue":"$day.windchill.min",
+        "windchillMinTime":"$day.windchill.mintime",
+        "humidityMaxValue":"$day.outHumidity.max",
+        "humidityMaxTime":"$day.outHumidity.maxtime",
+        "humidityMinValue":"$day.outHumidity.min",
+        "humidityMinTime":"$day.outHumidity.mintime",
+        "dewpointMaxValue":"$day.dewpoint.max",
+        "dewpointMaxTime":"$day.dewpoint.maxtime",
+        "dewpointMinValue":"$day.dewpoint.min",
+        "dewpointMinTime":"$day.dewpoint.mintime",
+        "barometerMaxValue":"$day.barometer.max",
+        "barometerMaxTime":"$day.barometer.maxtime",
+        "barometerMinValue":"$day.barometer.min",
+        "barometerMinTime":"$day.barometer.mintime",
+        "rainSum":"$day.rain.sum",
+        "rainRateMaxValue":"$day.rainRate.max",
+        "rainRateMaxTime":"$day.rainRate.maxtime",
+        "windMaxValue":"$day.wind.max",
+        "windMaxTime":"$day.wind.maxtime",
+        "windAvg":"$day.wind.avg"
+      },
+    "almanac":{
+      "sun":{
+        "sunrise":"$almanac.sunrise",
+        "sunset":"$almanac.sunset"
+      },
+      "moon":{
+        "phase":"$almanac.moon_phase",
+        "fullness":"$almanac.moon_fullness%"
+      }
+    }
+  }

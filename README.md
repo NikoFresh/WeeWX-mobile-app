@@ -4,7 +4,7 @@ WeeWX Weather App is a mobile application for [WeeWX](http://weewx.com) built wi
 
 ## Installation
 ### WeeWX installation
-Copy the file json/app.json.tmpl to your WeeWX server in the skin you're currently using, then edit the skin.conf file:
+Copy the file weewx/app.json.tmpl to your WeeWX server in the skin you're currently using, then edit the skin.conf file:
 
 ```conf
 [CheetahGenerator]
