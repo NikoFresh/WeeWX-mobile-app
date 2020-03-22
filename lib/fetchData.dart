@@ -1,6 +1,5 @@
-import 'package:weewx_mobile_app/config.dart';
-
-import 'package:weewx_mobile_app/json.dart';
+import 'config.dart';
+import 'json.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 

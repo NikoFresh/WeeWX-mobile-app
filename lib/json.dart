@@ -21,6 +21,7 @@ class WeatherData {
     String weewxVersion;
     Current current;
     SinceMidnight sinceMidnight;
+    SinceMidnight yesterday;
     Almanac almanac;
 
     WeatherData({
@@ -36,6 +37,7 @@ class WeatherData {
         this.weewxVersion,
         this.current,
         this.sinceMidnight,
+        this.yesterday,
         this.almanac,
     });
 
@@ -52,6 +54,7 @@ class WeatherData {
         weewxVersion: json["weewxVersion"],
         current: Current.fromJson(json["current"]),
         sinceMidnight: SinceMidnight.fromJson(json["sinceMidnight"]),
+        yesterday: SinceMidnight.fromJson(json["yesterday"]),
         almanac: Almanac.fromJson(json["almanac"]),
     );
 
@@ -68,6 +71,7 @@ class WeatherData {
         "weewxVersion": weewxVersion,
         "current": current.toJson(),
         "sinceMidnight": sinceMidnight.toJson(),
+        "yesterday": yesterday.toJson(),
         "almanac": almanac.toJson(),
     };
 }

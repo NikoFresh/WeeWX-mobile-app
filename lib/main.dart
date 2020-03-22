@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weewx_mobile_app/fetchData.dart';
-import 'package:weewx_mobile_app/json.dart';
-import 'package:weewx_mobile_app/config.dart';
+import 'fetchData.dart';
+import 'json.dart';
+import 'config.dart';
 import 'generated/l10n.dart';
 
 void main() {

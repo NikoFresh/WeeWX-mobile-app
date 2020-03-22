@@ -20,6 +20,8 @@ Copy the file weewx/app.json.tmpl to your WeeWX server in the skin you're curren
 
 ##### Clone the repository.
 
+##### Run 'flutter packages get'
+
 ##### Add your links in the app:
 In the /lib/config.dart:
 ```dart
