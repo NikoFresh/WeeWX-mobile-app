@@ -13,5 +13,7 @@
     "sinceMNHumMax": "High humidity: ",
     "sinceMNHumMin": "Low humidity: ",
     "sinceMNWindMax": "High wind: ",
-    "sinceMNTotalRain": "Total rain: "
+    "sinceMNTotalRain": "Total rain: ",
+
+    "yesterdayTitle": "Yesterday: "
 }

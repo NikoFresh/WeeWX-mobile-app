@@ -16,7 +16,7 @@ Copy the file weewx/app.json.tmpl to your WeeWX server in the skin you're curren
 ```
 ### App installation
 #### Note: these instruction are for Android. To buld the app for iOS, follow [this](https://flutter.dev/docs/deployment/ios). 
-##### Install Flutter in your computer if you don't have it already: [Install - Flutter](https://flutter.dev/docs/get-started/install);
+#### Install Flutter in your computer if you don't have it already: [Install - Flutter](https://flutter.dev/docs/get-started/install);
 
 ##### Clone the repository.
 
@@ -25,9 +25,9 @@ Copy the file weewx/app.json.tmpl to your WeeWX server in the skin you're curren
 ##### Add your links in the app:
 In the /lib/config.dart:
 ```dart
-final weatherDataUrl = ; // Required
-final radarUrl = ; // Optional
-final webcamUrl = ; // Optional
+final weatherDataUrl = ''; // Required
+final radarUrl = ''; // Optional
+final webcamUrl = ''; // Optional
 ```
 
 
@@ -63,6 +63,24 @@ You'll have the apk file in weewx-mobile-app/build/app/outputs/apk/release/app-r
 ## Internationalization
 Install [this](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl) plugin for VS Code. Run the command "Flutter Intl: Add locale" and edit the file /l10n/intl_locale.arb.
 ##### Note that the app is already translated in English and Italian
+
+## Changelog
+* 1.1.2:
+```
+Added 'yesterday' card
+```
+* 1.1.1: 
+```
+Added english translation
+Added the adaptive icon for Android
+Webcam and radar are now optional
+Added README.md and license
+```
+
+## TODO
+* Add support for multiple images/radars;
+* Add week/month/year data;
+* Add a notification with current weather;
 
 ## License
 [MIT](https://github.com/NikoFresh/WeeWX-mobile-app/blob/master/license)

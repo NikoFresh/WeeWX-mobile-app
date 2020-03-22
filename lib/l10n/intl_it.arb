@@ -13,5 +13,7 @@
     "sinceMNHumMax": "Umidità massima: ",
     "sinceMNHumMin": "Umidità minima: ",
     "sinceMNWindMax": "Vento massimo: ",
-    "sinceMNTotalRain": "Pioggia totale: "
+    "sinceMNTotalRain": "Pioggia totale: ",
+
+    "yesterdayTitle": "Ieri: "
 }

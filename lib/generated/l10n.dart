@@ -154,6 +154,15 @@ class S {
       args: [],
     );
   }
+
+  String get yesterdayTitle {
+    return Intl.message(
+      'Yesterday: ',
+      name: 'yesterdayTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

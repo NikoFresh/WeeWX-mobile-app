@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sinceMNTempMin" : MessageLookupByLibrary.simpleMessage("Temperatura minima: "),
     "sinceMNTitle" : MessageLookupByLibrary.simpleMessage("Da mezzanotte"),
     "sinceMNTotalRain" : MessageLookupByLibrary.simpleMessage("Pioggia totale: "),
-    "sinceMNWindMax" : MessageLookupByLibrary.simpleMessage("Vento massimo: ")
+    "sinceMNWindMax" : MessageLookupByLibrary.simpleMessage("Vento massimo: "),
+    "yesterdayTitle" : MessageLookupByLibrary.simpleMessage("Ieri: ")
   };
 }
