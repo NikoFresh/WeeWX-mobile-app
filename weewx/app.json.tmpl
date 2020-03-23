@@ -10,8 +10,8 @@
     "serverUptime":"$station.os_uptime",
     "weewxVersion":"$station.version",
     "current": {
-        "outTemp":"$current.outTemp.formatted",
-        "windchill":"$current.windchill.formatted",
+        "outTemp":"$current.outTemp",
+        "windchill":"$current.windchill",
         "dewpoint":"$current.dewpoint",
         "humidity":"$current.outHumidity",
         "barometer":"$current.barometer",
@@ -20,9 +20,9 @@
         "rainRate":"$current.rainRate"
     },
     "sinceMidnight": {
-        "tempMaxValue":"$day.outTemp.max.formatted",
+        "tempMaxValue":"$day.outTemp.max",
         "tempMaxTime":"$day.outTemp.maxtime",
-        "tempMinValue":"$day.outTemp.min.formatted",
+        "tempMinValue":"$day.outTemp.min",
         "tempMinTime":"$day.outTemp.mintime",
         "windchillMinValue":"$day.windchill.min",
         "windchillMinTime":"$day.windchill.mintime",
@@ -46,9 +46,9 @@
         "windAvg":"$day.wind.avg"
       },
       "yesterday": {
-        "tempMaxValue":"$yesterday.outTemp.max.formatted",
+        "tempMaxValue":"$yesterday.outTemp.max",
         "tempMaxTime":"$yesterday.outTemp.maxtime",
-        "tempMinValue":"$yesterday.outTemp.min.formatted",
+        "tempMinValue":"$yesterday.outTemp.min",
         "tempMinTime":"$yesterday.outTemp.mintime",
         "windchillMinValue":"$yesterday.windchill.min",
         "windchillMinTime":"$yesterday.windchill.mintime",

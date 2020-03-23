@@ -47,8 +47,8 @@ Widget extendedInfo(context, snapshot, time) {
                             Expanded(
                               child: Text(
                                 time == 'sinceMidnight'
-                                    ? '${snapshot.data.sinceMidnight.tempMaxValue} °C'
-                                    : '${snapshot.data.yesterday.tempMaxValue} °C',
+                                    ?  snapshot.data.sinceMidnight.tempMaxValue.replaceFirst('&#176;', '°')
+                                    : snapshot.data.yesterday.tempMaxValue.replaceFirst('&#176;', '°'),
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -89,8 +89,8 @@ Widget extendedInfo(context, snapshot, time) {
                           Expanded(
                             child: Text(
                               time == 'sinceMidnight'
-                                  ? '${snapshot.data.sinceMidnight.tempMinValue} °C'
-                                  : '${snapshot.data.yesterday.tempMinValue} °C',
+                                  ? snapshot.data.sinceMidnight.tempMinValue.replaceFirst('&#176;', '°')
+                                  : snapshot.data.yesterday.tempMinValue.replaceFirst('&#176;', '°'),
                               style: TextStyle(
                                 color: const Color(0xFFE5E5E5),
                                 fontSize: 16.0,

@@ -34,7 +34,8 @@ Widget current(snapshot, context) {
                       Expanded(
                         child: Text(
                           S.of(context).currentTemp +
-                              '${snapshot.data.current.outTemp} °C',
+                              snapshot.data.current.outTemp
+                                  .replaceFirst('&#176;', '°'),
                           style: TextStyle(
                             color: const Color(0xFFE5E5E5),
                             fontSize: 16.0,
@@ -49,7 +50,7 @@ Widget current(snapshot, context) {
                     Expanded(
                       child: Text(
                         S.of(context).currentHumidity +
-                            '${snapshot.data.current.humidity}',
+                            snapshot.data.current.humidity,
                         style: TextStyle(
                           color: const Color(0xFFE5E5E5),
                           fontSize: 16.0,
@@ -65,7 +66,7 @@ Widget current(snapshot, context) {
                       Expanded(
                         child: Text(
                           S.of(context).currentWind +
-                              '${snapshot.data.current.windSpeed}',
+                              snapshot.data.current.windSpeed,
                           style: TextStyle(
                             color: const Color(0xFFE5E5E5),
                             fontSize: 16.0,
@@ -111,7 +112,8 @@ Widget current(snapshot, context) {
                     Expanded(
                       child: Text(
                         S.of(context).currentWindChill +
-                            '${snapshot.data.current.windchill} °C',
+                            snapshot.data.current.windchill
+                                .replaceFirst('&#176;', '°'),
                         style: TextStyle(
                           color: const Color(0xFFE5E5E5),
                           fontSize: 16.0,
