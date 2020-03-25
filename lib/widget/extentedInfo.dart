@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'generated/l10n.dart';
+import '../generated/l10n.dart';
 
 Widget extendedInfo(context, snapshot, time) {
   return Container(

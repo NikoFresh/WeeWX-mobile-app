@@ -1,4 +1,4 @@
-import 'config.dart';
+import '../config.dart';
 import 'json.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
