@@ -21,6 +21,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/locale/localization_en.json
+    - assets/locale/localization_it.json
 
 flutter_icons:
   image_path: 'assets/icon.png'
@@ -28,6 +31,3 @@ flutter_icons:
   ios: true
   adaptive_icon_background: 'assets/icon_background.png'
   adaptive_icon_foreground: 'assets/icon_foreground.png'
-
-flutter_intl:
-  enabled: true

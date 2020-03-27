@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import '../generated/l10n.dart';
+import '../localizations.dart';
 
 Widget extendedInfo(context, snapshot, time) {
   return Container(
@@ -17,8 +17,8 @@ Widget extendedInfo(context, snapshot, time) {
                   child: Container(
                     child: Text(
                       time == 'sinceMidnight'
-                          ? S.of(context).sinceMNTitle
-                          : S.of(context).yesterdayTitle,
+                          ? AppLocalizations.instance.text('sinceMNTitle')
+                          : AppLocalizations.instance.text('yesterdayTitle'),
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -34,7 +34,7 @@ Widget extendedInfo(context, snapshot, time) {
                     children: <Widget>[
                       Expanded(
                         child: Text(
-                          S.of(context).sinceMNTempMax,
+                          AppLocalizations.instance.text('sinceMNTempMax'),
                           style: TextStyle(
                             color: const Color(0xFFE5E5E5),
                             fontSize: 16.0,
@@ -47,8 +47,10 @@ Widget extendedInfo(context, snapshot, time) {
                             Expanded(
                               child: Text(
                                 time == 'sinceMidnight'
-                                    ?  snapshot.data.sinceMidnight.tempMaxValue.replaceFirst('&#176;', '°')
-                                    : snapshot.data.yesterday.tempMaxValue.replaceFirst('&#176;', '°'),
+                                    ? snapshot.data.sinceMidnight.tempMaxValue
+                                        .replaceFirst('&#176;', '°')
+                                    : snapshot.data.yesterday.tempMaxValue
+                                        .replaceFirst('&#176;', '°'),
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -76,7 +78,7 @@ Widget extendedInfo(context, snapshot, time) {
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        S.of(context).sinceMNTempMin,
+                        AppLocalizations.instance.text('sinceMNTempMin'),
                         style: TextStyle(
                           color: const Color(0xFFE5E5E5),
                           fontSize: 16.0,
@@ -89,8 +91,10 @@ Widget extendedInfo(context, snapshot, time) {
                           Expanded(
                             child: Text(
                               time == 'sinceMidnight'
-                                  ? snapshot.data.sinceMidnight.tempMinValue.replaceFirst('&#176;', '°')
-                                  : snapshot.data.yesterday.tempMinValue.replaceFirst('&#176;', '°'),
+                                  ? snapshot.data.sinceMidnight.tempMinValue
+                                      .replaceFirst('&#176;', '°')
+                                  : snapshot.data.yesterday.tempMinValue
+                                      .replaceFirst('&#176;', '°'),
                               style: TextStyle(
                                 color: const Color(0xFFE5E5E5),
                                 fontSize: 16.0,
@@ -119,7 +123,7 @@ Widget extendedInfo(context, snapshot, time) {
                     children: <Widget>[
                       Expanded(
                         child: Text(
-                          S.of(context).sinceMNHumMax,
+                          AppLocalizations.instance.text('sinceMNHumMax'),
                           style: TextStyle(
                             color: const Color(0xFFE5E5E5),
                             fontSize: 16.0,
@@ -161,7 +165,7 @@ Widget extendedInfo(context, snapshot, time) {
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        S.of(context).sinceMNHumMin,
+                        AppLocalizations.instance.text('sinceMNHumMin'),
                         style: TextStyle(
                           color: const Color(0xFFE5E5E5),
                           fontSize: 16.0,
@@ -204,7 +208,7 @@ Widget extendedInfo(context, snapshot, time) {
                     children: <Widget>[
                       Expanded(
                         child: Text(
-                          S.of(context).sinceMNWindMax,
+                          AppLocalizations.instance.text('sinceMNWindMax'),
                           style: TextStyle(
                             color: const Color(0xFFE5E5E5),
                             fontSize: 16.0,
@@ -246,7 +250,7 @@ Widget extendedInfo(context, snapshot, time) {
                   children: <Widget>[
                     Expanded(
                       child: Text(
-                        S.of(context).sinceMNTotalRain,
+                        AppLocalizations.instance.text('sinceMNTotalRain'),
                         style: TextStyle(
                           color: const Color(0xFFE5E5E5),
                           fontSize: 16.0,

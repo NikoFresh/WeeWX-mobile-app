@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'generated/l10n.dart';
 import 'screens/currentHome.dart';
-
+import 'localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 void main() {
   runApp(new MyApp());
 }
@@ -13,8 +13,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: [S.delegate],
-      supportedLocales: S.delegate.supportedLocales,
+      localizationsDelegates: [
+        const AppLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', ''),
+        const Locale('it', ''),
+      ],
+      localeResolutionCallback:
+          (Locale locale, Iterable<Locale> supportedLocales) {
+        for (Locale supportedLocale in supportedLocales) {
+          if (supportedLocale.languageCode == locale.languageCode ||
+              supportedLocale.countryCode == locale.countryCode) {
+            return supportedLocale;
+          }
+        }
+        return supportedLocales.first;
+      },
       title: _title,
       theme: ThemeData(
           brightness: Brightness.dark,
@@ -63,8 +80,8 @@ class _Home extends State<Home> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(Icons.timer),
+            title: Text('Current'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.history),
