@@ -14,6 +14,13 @@ Copy the file weewx/app.json.tmpl to your WeeWX server in the skin you're curren
       [[[mobileapp]]]
             template = app.json.tmpl
 ```
+
+Be sure to set UTF-8 as encoding:
+```conf
+[CheetahGenerator]
+   # Possible encodings are 'html_entities', 'utf8', or 'strict_ascii'
+    encoding = utf8
+```
 ### App installation
 #### Note: these instruction are for Android. To buld the app for iOS, follow [this](https://flutter.dev/docs/deployment/ios). 
 #### Install Flutter in your computer if you don't have it already: [Install - Flutter](https://flutter.dev/docs/get-started/install);
@@ -61,10 +68,15 @@ flutter build apk
 You'll have the apk file in weewx-mobile-app/build/app/outputs/apk/release/app-relase.apk
 
 ## Internationalization
-Install [this](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl) plugin for VS Code. Run the command "Flutter Intl: Add locale" and edit the file /l10n/intl_locale.arb.
-##### Note that the app is already translated in English and Italian
+The app is currently translated in English and Italian
 
 ## Changelog
+* 1.2:
+```
+Added 'Summary' page with week, month, year info
+Added a bottomnavbar
+Fixed some padding
+```
 * 1.1.2:
 ```
 Added 'yesterday' card
