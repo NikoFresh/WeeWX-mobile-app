@@ -20,7 +20,7 @@ class SummaryScreen extends StatelessWidget {
 
               return SafeArea(
                   child: ListView(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                 children: [
                   /// Week
                   extendedInfo(context, snapshot.data.week,

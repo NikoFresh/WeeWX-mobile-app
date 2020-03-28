@@ -23,29 +23,32 @@ class CurrentHome extends StatelessWidget {
 
               return SafeArea(
                   child: ListView(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
                 children: [
                   /// Title
-                  RichText(
-                    text: TextSpan(
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '${snapshot.data.location} ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFF00c2c2),
-                            fontSize: 20.0,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    child: RichText(
+                      text: TextSpan(
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '${snapshot.data.location} ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xFF00c2c2),
+                              fontSize: 20.0,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text: '\n${snapshot.data.time}',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: const Color(0xFFE5E5E5),
-                            fontSize: 20.0,
-                          ),
-                        )
-                      ],
+                          TextSpan(
+                            text: '\n${snapshot.data.time}',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: const Color(0xFFE5E5E5),
+                              fontSize: 20.0,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
 
