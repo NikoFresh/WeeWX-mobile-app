@@ -20,8 +20,11 @@ class WeatherData {
     String serverUptime;
     String weewxVersion;
     Current current;
-    SinceMidnight sinceMidnight;
-    SinceMidnight yesterday;
+    Month sinceMidnight;
+    Month yesterday;
+    Month week;
+    Month month;
+    Month year;
     Almanac almanac;
 
     WeatherData({
@@ -38,6 +41,9 @@ class WeatherData {
         this.current,
         this.sinceMidnight,
         this.yesterday,
+        this.week,
+        this.month,
+        this.year,
         this.almanac,
     });
 
@@ -53,8 +59,11 @@ class WeatherData {
         serverUptime: json["serverUptime"],
         weewxVersion: json["weewxVersion"],
         current: Current.fromJson(json["current"]),
-        sinceMidnight: SinceMidnight.fromJson(json["sinceMidnight"]),
-        yesterday: SinceMidnight.fromJson(json["yesterday"]),
+        sinceMidnight: Month.fromJson(json["sinceMidnight"]),
+        yesterday: Month.fromJson(json["yesterday"]),
+        week: Month.fromJson(json["week"]),
+        month: Month.fromJson(json["month"]),
+        year: Month.fromJson(json["year"]),
         almanac: Almanac.fromJson(json["almanac"]),
     );
 
@@ -72,6 +81,9 @@ class WeatherData {
         "current": current.toJson(),
         "sinceMidnight": sinceMidnight.toJson(),
         "yesterday": yesterday.toJson(),
+        "week": week.toJson(),
+        "month": month.toJson(),
+        "year": year.toJson(),
         "almanac": almanac.toJson(),
     };
 }
@@ -180,7 +192,7 @@ class Current {
     };
 }
 
-class SinceMidnight {
+class Month {
     String tempMaxValue;
     String tempMaxTime;
     String tempMinValue;
@@ -206,7 +218,7 @@ class SinceMidnight {
     String windMaxTime;
     String windAvg;
 
-    SinceMidnight({
+    Month({
         this.tempMaxValue,
         this.tempMaxTime,
         this.tempMinValue,
@@ -233,7 +245,7 @@ class SinceMidnight {
         this.windAvg,
     });
 
-    factory SinceMidnight.fromJson(Map<String, dynamic> json) => SinceMidnight(
+    factory Month.fromJson(Map<String, dynamic> json) => Month(
         tempMaxValue: json["tempMaxValue"],
         tempMaxTime: json["tempMaxTime"],
         tempMinValue: json["tempMinValue"],

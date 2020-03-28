@@ -3,9 +3,9 @@ import 'json.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 
-String url = weatherDataUrl;
-
 Future<WeatherData> getWeatherData() async{
-  final response = await http.get('$url');
+  final response = await http.get('$weatherDataUrl', headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },);
   return weatherDataFromJson(response.body);
 }

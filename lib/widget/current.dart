@@ -34,8 +34,7 @@ Widget current(snapshot, context) {
                       Expanded(
                         child: Text(
                           AppLocalizations.instance.text('currentTemp') +
-                              snapshot.data.current.outTemp
-                                  .replaceFirst('&#176;', '°'),
+                              snapshot.data.current.outTemp,
                           style: TextStyle(
                             color: const Color(0xFFE5E5E5),
                             fontSize: 16.0,
@@ -112,8 +111,7 @@ Widget current(snapshot, context) {
                     Expanded(
                       child: Text(
                         AppLocalizations.instance.text('currentWindChill') +
-                            snapshot.data.current.windchill
-                                .replaceFirst('&#176;', '°'),
+                            snapshot.data.current.windchill,
                         style: TextStyle(
                           color: const Color(0xFFE5E5E5),
                           fontSize: 16.0,

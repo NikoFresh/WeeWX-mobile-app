@@ -5,6 +5,7 @@ import '../widget/images.dart';
 import '../widget/current.dart';
 import '../widget/extentedInfo.dart';
 import '../config.dart';
+import '../localizations.dart';
 
 class CurrentHome extends StatelessWidget {
   CurrentHome({Key key}) : super(key: key);
@@ -55,10 +56,12 @@ class CurrentHome extends StatelessWidget {
                   current(snapshot, context),
 
                   /// SINCE MIDNIGHT
-                  extendedInfo(context, snapshot, 'sinceMidnight'),
+                  extendedInfo(context, snapshot.data.sinceMidnight,
+                      AppLocalizations.instance.text('sinceMNTitle')),
 
                   /// YESTERDAY
-                  extendedInfo(context, snapshot, 'yesterday'),
+                  extendedInfo(context, snapshot.data.yesterday,
+                      AppLocalizations.instance.text('yesterdayTitle')),
 
                   /// RADAR
                   imageWidget(radarUrl),

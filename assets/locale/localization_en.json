@@ -15,5 +15,11 @@
     "sinceMNWindMax": "High wind: ",
     "sinceMNTotalRain": "Total rain: ",
 
-    "yesterdayTitle": "Yesterday: "
+    "yesterdayTitle": "Yesterday: ",
+    "weekTitle": "Week",
+    "monthTitle": "Month",
+    "yearTitle": "Year",
+    
+    "BNVcurrent": "Current",
+    "BNVsummary": "Summary"
 }

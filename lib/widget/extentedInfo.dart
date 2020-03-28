@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import '../localizations.dart';
 
-Widget extendedInfo(context, snapshot, time) {
+Widget extendedInfo(context, jsonData, title) {
   return Container(
       margin: const EdgeInsets.only(top: 10, bottom: 10),
       child: ClipRRect(
@@ -16,9 +16,7 @@ Widget extendedInfo(context, snapshot, time) {
                   width: double.infinity,
                   child: Container(
                     child: Text(
-                      time == 'sinceMidnight'
-                          ? AppLocalizations.instance.text('sinceMNTitle')
-                          : AppLocalizations.instance.text('yesterdayTitle'),
+                      title,
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -46,11 +44,7 @@ Widget extendedInfo(context, snapshot, time) {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                time == 'sinceMidnight'
-                                    ? snapshot.data.sinceMidnight.tempMaxValue
-                                        .replaceFirst('&#176;', '°')
-                                    : snapshot.data.yesterday.tempMaxValue
-                                        .replaceFirst('&#176;', '°'),
+                                jsonData.tempMaxValue,
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -59,9 +53,8 @@ Widget extendedInfo(context, snapshot, time) {
                             ),
                             Expanded(
                               child: Text(
-                                time == 'sinceMidnight'
-                                    ? '${snapshot.data.sinceMidnight.tempMaxTime}'
-                                    : '${snapshot.data.yesterday.tempMaxTime}',
+                               
+                                jsonData.tempMaxTime,
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -90,11 +83,7 @@ Widget extendedInfo(context, snapshot, time) {
                         children: <Widget>[
                           Expanded(
                             child: Text(
-                              time == 'sinceMidnight'
-                                  ? snapshot.data.sinceMidnight.tempMinValue
-                                      .replaceFirst('&#176;', '°')
-                                  : snapshot.data.yesterday.tempMinValue
-                                      .replaceFirst('&#176;', '°'),
+                              jsonData.tempMinValue,
                               style: TextStyle(
                                 color: const Color(0xFFE5E5E5),
                                 fontSize: 16.0,
@@ -103,9 +92,7 @@ Widget extendedInfo(context, snapshot, time) {
                           ),
                           Expanded(
                             child: Text(
-                              time == 'sinceMidnight'
-                                  ? '${snapshot.data.sinceMidnight.tempMinTime}'
-                                  : '${snapshot.data.yesterday.tempMinTime}',
+                              jsonData.tempMinTime,
                               style: TextStyle(
                                 color: const Color(0xFFE5E5E5),
                                 fontSize: 16.0,
@@ -135,9 +122,7 @@ Widget extendedInfo(context, snapshot, time) {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                time == 'sinceMidnight'
-                                    ? '${snapshot.data.sinceMidnight.humidityMaxValue}'
-                                    : '${snapshot.data.yesterday.humidityMaxValue}',
+                                jsonData.humidityMaxValue,
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -146,9 +131,7 @@ Widget extendedInfo(context, snapshot, time) {
                             ),
                             Expanded(
                               child: Text(
-                                time == 'sinceMidnight'
-                                    ? '${snapshot.data.sinceMidnight.humidityMaxTime}'
-                                    : '${snapshot.data.yesterday.humidityMaxTime}',
+                                jsonData.humidityMaxTime,
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -177,9 +160,7 @@ Widget extendedInfo(context, snapshot, time) {
                         children: <Widget>[
                           Expanded(
                             child: Text(
-                              time == 'sinceMidnight'
-                                  ? '${snapshot.data.sinceMidnight.humidityMinValue}'
-                                  : '${snapshot.data.yesterday.humidityMinValue}',
+                              jsonData.humidityMinValue,
                               style: TextStyle(
                                 color: const Color(0xFFE5E5E5),
                                 fontSize: 16.0,
@@ -188,9 +169,7 @@ Widget extendedInfo(context, snapshot, time) {
                           ),
                           Expanded(
                             child: Text(
-                              time == 'sinceMidnight'
-                                  ? '${snapshot.data.sinceMidnight.humidityMinTime}'
-                                  : '${snapshot.data.yesterday.humidityMinTime}',
+                              jsonData.humidityMinTime,
                               style: TextStyle(
                                 color: const Color(0xFFE5E5E5),
                                 fontSize: 16.0,
@@ -220,9 +199,7 @@ Widget extendedInfo(context, snapshot, time) {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                time == 'sinceMidnight'
-                                    ? '${snapshot.data.sinceMidnight.windMaxValue}'
-                                    : '${snapshot.data.yesterday.windMaxValue}',
+                                jsonData.windMaxValue,
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -231,9 +208,7 @@ Widget extendedInfo(context, snapshot, time) {
                             ),
                             Expanded(
                               child: Text(
-                                time == 'sinceMidnight'
-                                    ? '${snapshot.data.sinceMidnight.windMaxTime}'
-                                    : '${snapshot.data.yesterday.windMaxTime}',
+                                jsonData.windMaxTime,
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -259,9 +234,7 @@ Widget extendedInfo(context, snapshot, time) {
                     ),
                     Expanded(
                       child: Text(
-                        time == 'sinceMidnight'
-                            ? '${snapshot.data.sinceMidnight.rainSum}'
-                            : '${snapshot.data.yesterday.rainSum}',
+                        jsonData.rainSum,
                         style: TextStyle(
                           color: const Color(0xFFE5E5E5),
                           fontSize: 16.0,

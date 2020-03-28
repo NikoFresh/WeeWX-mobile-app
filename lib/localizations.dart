@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart' show SynchronousFuture;
+//import 'package:flutter/foundation.dart' show SynchronousFuture;
 import 'package:flutter/services.dart';
 
 class AppLocalizations {
@@ -29,7 +29,7 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   const AppLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => ['en', 'es'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => ['en', 'it'].contains(locale.languageCode);
 
   @override
   Future<AppLocalizations> load(Locale locale)  {

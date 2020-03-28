@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'screens/currentHome.dart';
+import 'screens/summaryScreen.dart';
 import 'localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 void main() {
   runApp(new MyApp());
 }
 
-
-/// This Widget is the main application widget.
 class MyApp extends StatelessWidget {
   static const String _title = 'WeeWX weather app';
   @override
@@ -55,14 +55,7 @@ class _Home extends State<Home> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
     CurrentHome(),
-    Text(
-      'I\'m useless',
-      style: optionStyle,
-    ),
-    Text(
-      'I\'m useless too',
-      style: optionStyle,
-    ),
+   SummaryScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -77,24 +70,25 @@ class _Home extends State<Home> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.timer),
-            title: Text('Current'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            title: Text('Summary'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            title: Text('Settings'),
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: const Color(0xFF222836),
+        ),
+        child: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.timer),
+              title: Text(AppLocalizations.instance.text('BNVcurrent')),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.history),
+              title: Text(AppLocalizations.instance.text('BNVsummary')),
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: const Color(0xFF00c2c2),
+          onTap: _onItemTapped,
+        ),
       ),
     );
   }

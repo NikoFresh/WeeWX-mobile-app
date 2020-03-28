@@ -15,5 +15,11 @@
     "sinceMNWindMax": "Vento massimo: ",
     "sinceMNTotalRain": "Pioggia totale: ",
 
-    "yesterdayTitle": "Ieri: "
+    "yesterdayTitle": "Ieri: ",
+    "weekTitle": "Settimana",
+    "monthTitle": "Mese",
+    "yearTitle": "Anno",
+
+    "BNVcurrent": "Attuale",
+    "BNVsummary": "Summary"
 }
