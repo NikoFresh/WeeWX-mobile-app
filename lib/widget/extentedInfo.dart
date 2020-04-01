@@ -44,7 +44,7 @@ Widget extendedInfo(context, jsonData, title) {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                jsonData.tempMaxValue,
+                                jsonData.tempMaxValue.replaceAll('Â°','°'),
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -53,7 +53,6 @@ Widget extendedInfo(context, jsonData, title) {
                             ),
                             Expanded(
                               child: Text(
-                               
                                 jsonData.tempMaxTime,
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
@@ -83,7 +82,7 @@ Widget extendedInfo(context, jsonData, title) {
                         children: <Widget>[
                           Expanded(
                             child: Text(
-                              jsonData.tempMinValue,
+                              jsonData.tempMinValue.replaceAll('Â°','°'),
                               style: TextStyle(
                                 color: const Color(0xFFE5E5E5),
                                 fontSize: 16.0,
