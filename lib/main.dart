@@ -55,7 +55,7 @@ class _Home extends State<Home> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
     CurrentHome(),
-   SummaryScreen(),
+    SummaryScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -78,11 +78,11 @@ class _Home extends State<Home> {
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.timer),
-              title: Text(AppLocalizations.instance.text('BNVcurrent')),
+              label: AppLocalizations.instance.text('BNVcurrent'),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.history),
-              title: Text(AppLocalizations.instance.text('BNVsummary')),
+              label: AppLocalizations.instance.text('BNVsummary'),
             ),
           ],
           currentIndex: _selectedIndex,
