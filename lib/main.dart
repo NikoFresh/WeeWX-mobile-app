@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
       title: _title,
       theme: ThemeData(
           brightness: Brightness.dark,
-          primaryColor: const Color(0xFF131825),
-          accentColor: const Color(0xFF2D3446),
+          primaryColor: const Color.fromRGBO(48, 51, 59, 1.0),
+          accentColor: const Color.fromRGBO(30, 33, 40, 1.0),
           textTheme: TextTheme()),
       home: Home(),
     );
@@ -72,7 +72,7 @@ class _Home extends State<Home> {
       ),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
-          canvasColor: const Color(0xFF222836),
+          canvasColor: const Color.fromRGBO(30, 33, 40, 1.0),
         ),
         child: BottomNavigationBar(
           items: <BottomNavigationBarItem>[

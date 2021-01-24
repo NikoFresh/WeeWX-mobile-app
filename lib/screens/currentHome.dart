@@ -12,7 +12,7 @@ class CurrentHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF131825),
+      backgroundColor: const Color.fromRGBO(30, 33, 40, 1.0),
       body: FutureBuilder<WeatherData>(
           future: getWeatherData(),
           builder: (context, snapshot) {
@@ -23,7 +23,8 @@ class CurrentHome extends StatelessWidget {
 
               return SafeArea(
                   child: ListView(
-                padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
+                padding: const EdgeInsets.only(
+                    left: 15.0, right: 15.0, top: 10.0, bottom: 10.0),
                 children: [
                   /// Title
                   Padding(

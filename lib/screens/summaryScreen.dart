@@ -9,7 +9,7 @@ class SummaryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF131825),
+      backgroundColor: const Color.fromRGBO(30, 33, 40, 1.0),
       body: FutureBuilder<WeatherData>(
           future: getWeatherData(),
           builder: (context, snapshot) {
@@ -29,7 +29,7 @@ class SummaryScreen extends StatelessWidget {
                   /// Month
                   extendedInfo(context, snapshot.data.month,
                       AppLocalizations.instance.text('monthTitle')),
-                  
+
                   /// Year
                   extendedInfo(context, snapshot.data.year,
                       AppLocalizations.instance.text('yearTitle')),

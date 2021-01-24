@@ -7,7 +7,7 @@ Widget extendedInfo(context, jsonData, title) {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16.0),
         child: Container(
-          color: const Color(0xFF2D3446),
+          color: const Color.fromRGBO(48, 51, 59, 1.0),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Column(
@@ -44,7 +44,7 @@ Widget extendedInfo(context, jsonData, title) {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                jsonData.tempMaxValue.replaceAll('Â°','°'),
+                                jsonData.tempMaxValue.replaceAll('Â°', '°'),
                                 style: TextStyle(
                                   color: const Color(0xFFE5E5E5),
                                   fontSize: 16.0,
@@ -82,7 +82,7 @@ Widget extendedInfo(context, jsonData, title) {
                         children: <Widget>[
                           Expanded(
                             child: Text(
-                              jsonData.tempMinValue.replaceAll('Â°','°'),
+                              jsonData.tempMinValue.replaceAll('Â°', '°'),
                               style: TextStyle(
                                 color: const Color(0xFFE5E5E5),
                                 fontSize: 16.0,

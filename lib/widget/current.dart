@@ -8,7 +8,7 @@ Widget current(snapshot, context) {
     child: ClipRRect(
       borderRadius: BorderRadius.circular(16.0),
       child: Container(
-        color: const Color(0xFF2D3446),
+        color: const Color.fromRGBO(48, 51, 59, 1.0),
         child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Column(
@@ -34,7 +34,8 @@ Widget current(snapshot, context) {
                       Expanded(
                         child: Text(
                           AppLocalizations.instance.text('currentTemp') +
-                              snapshot.data.current.outTemp.replaceAll('Â°','°'),
+                              snapshot.data.current.outTemp
+                                  .replaceAll('Â°', '°'),
                           style: TextStyle(
                             color: const Color(0xFFE5E5E5),
                             fontSize: 16.0,
@@ -111,7 +112,8 @@ Widget current(snapshot, context) {
                     Expanded(
                       child: Text(
                         AppLocalizations.instance.text('currentWindChill') +
-                            snapshot.data.current.windchill.replaceAll('Â°','°'),
+                            snapshot.data.current.windchill
+                                .replaceAll('Â°', '°'),
                         style: TextStyle(
                           color: const Color(0xFFE5E5E5),
                           fontSize: 16.0,
