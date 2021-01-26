@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weewx_mobile_app/screens/settings.dart';
 import 'screens/currentHome.dart';
 import 'screens/summaryScreen.dart';
 import 'screens/settings.dart';

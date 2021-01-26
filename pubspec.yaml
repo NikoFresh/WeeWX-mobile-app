@@ -24,6 +24,7 @@ flutter:
   assets:
     - assets/locale/localization_en.json
     - assets/locale/localization_it.json
+    - assets/icon.png
 
 flutter_icons:
   image_path: 'assets/icon.png'

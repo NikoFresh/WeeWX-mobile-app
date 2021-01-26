@@ -37,7 +37,7 @@ class CurrentHome extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: const Color(0xFF00c2c2),
-                              fontSize: 20.0,
+                              fontSize: 25.0,
                             ),
                           ),
                           TextSpan(
