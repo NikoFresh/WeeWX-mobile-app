@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weewx_mobile_app/screens/settings.dart';
 import 'screens/currentHome.dart';
 import 'screens/summaryScreen.dart';
+import 'screens/settings.dart';
 import 'localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -56,6 +58,7 @@ class _Home extends State<Home> {
   List<Widget> _widgetOptions = <Widget>[
     CurrentHome(),
     SummaryScreen(),
+    Settings()
   ];
 
   void _onItemTapped(int index) {
@@ -84,6 +87,10 @@ class _Home extends State<Home> {
               icon: Icon(Icons.history),
               label: AppLocalizations.instance.text('BNVsummary'),
             ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            )
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: const Color(0xFF00c2c2),
