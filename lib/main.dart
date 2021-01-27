@@ -4,8 +4,10 @@ import 'screens/summaryScreen.dart';
 import 'screens/settings.dart';
 import 'localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  SharedPreferences.setMockInitialValues({});
   runApp(new MyApp());
 }
 

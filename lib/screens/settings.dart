@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weewx_mobile_app/widget/preferences.dart';
 
 class Settings extends StatelessWidget {
   @override
@@ -28,6 +29,10 @@ class Settings extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                Preferences(),
+
+                /// Info
                 GestureDetector(
                   onTap: () {
                     showAboutDialog(
